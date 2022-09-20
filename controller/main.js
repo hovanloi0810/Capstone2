@@ -7,18 +7,18 @@ function getProductClient() {
     .then((response) => {
       let products = response.data;
       productList = [...products];
-      productList.map((product) => {
-        return new Products(
-          product.name,
-          product.price,
-          product.screen,
-          product.backCamera,
-          product.frontCamera,
-          product.img,
-          product.desc,
-          product.type
-        );
-      });
+      // productList.map((product) => {
+      //   return new Products(
+      //     product.name,
+      //     product.price,
+      //     product.screen,
+      //     product.backCamera,
+      //     product.frontCamera,
+      //     product.img,
+      //     product.desc,
+      //     product.type
+      //   );
+      // });
 
       ShowProductClient(products);
     })
@@ -30,8 +30,7 @@ function getProductClient() {
 function selectType(typeProduct) {
   let products = [];
   for (let key in productList) {
-    console.log(productList[key].type);
-    if (productList[key].type === typeProduct) {
+    if (productList[key].type === typeProduct || 'All' === typeProduct) {
       products.push(productList[key]);
     }
   }
