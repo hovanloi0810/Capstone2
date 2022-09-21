@@ -247,8 +247,6 @@ function decreaseQuantityCartItem(productId) {
         localStorage.setItem("carts", JSON.stringify(carts));
         showProductCart(carts);
         renderCarts();
-      } else {
-        removeProduct(productId);
       }
     }
   }
