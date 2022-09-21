@@ -7,18 +7,18 @@ function getProductClient() {
     .then((response) => {
       let products = response.data;
       productList = [...products];
-      // productList.map((product) => {
-      //   return new Products(
-      //     product.name,
-      //     product.price,
-      //     product.screen,
-      //     product.backCamera,
-      //     product.frontCamera,
-      //     product.img,
-      //     product.desc,
-      //     product.type
-      //   );
-      // });
+      productList.map((product) => {
+        return new Products(
+          product.name,
+          product.price,
+          product.screen,
+          product.backCamera,
+          product.frontCamera,
+          product.img,
+          product.desc,
+          product.type
+        );
+      });
 
       ShowProductClient(products);
     })
