@@ -262,7 +262,8 @@ function removeProduct(productId) {
 }
 
 function clearCarts() {
-  carts = [];
+  // carts = [];
+  carts.splice(0,carts.length)
   renderCarts();
   showProductCart(carts);
   localStorage.setItem("carts", JSON.stringify(carts));
@@ -295,6 +296,7 @@ dom(".cart-overflow").addEventListener("click", (evt) => {
 });
 
 dom(".row").addEventListener("click", (evt) => {
+  console.log(evt.target);
   if (evt.target.getAttribute("data-type") === "clear") {
     clearCarts();
   }
